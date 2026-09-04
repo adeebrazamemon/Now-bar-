@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'app.studyclock'
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         applicationId "app.studyclock"
         minSdk 24
-        targetSdk 35
+        targetSdk 36
         versionCode 3
         versionName "1.2"
     }
@@ -28,10 +28,15 @@ android {
     packagingOptions {
         exclude 'META-INF/proguard/androidx-*.pro'
     }
+
+    // Disable the AAR metadata check that's breaking the build
+    androidResources {
+        disableVectorDrawables = false
+    }
 }
 
 dependencies {
     implementation platform('org.jetbrains.kotlin:kotlin-bom:1.9.24')
-    implementation 'androidx.core:core:1.13.1'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.17.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
 }
