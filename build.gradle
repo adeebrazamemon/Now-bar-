@@ -28,11 +28,6 @@ android {
     packagingOptions {
         exclude 'META-INF/proguard/androidx-*.pro'
     }
-
-    // Disable the AAR metadata check that's breaking the build
-    androidResources {
-        disableVectorDrawables = false
-    }
 }
 
 dependencies {
